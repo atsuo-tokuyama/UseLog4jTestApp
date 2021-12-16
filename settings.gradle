@@ -1,0 +1,3 @@
+rootProject.name = "UseLog4jTestApp"
+include ':app'
+include ':useLog4jLib'
