@@ -5,4 +5,5 @@ import org.apache.logging.log4j.EventLogger
 
 fun print() {
     Log.i("uselog4jlib", "I use log4j.")
+    val a = org.apache.logging.log4j.Level.ALL
 }

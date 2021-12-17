@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.github.unafraid.gradle.git-repo-plugin'
 }
 
 android {
@@ -30,10 +31,13 @@ android {
         jvmTarget = '1.8'
     }
 }
-
+repositories {
+    github("atsuo-tokuyama", "UseLog4jTestApp", "origin", "master", "repository")
+}
 dependencies {
 
-    implementation project(":useLog4jLib")
+//    implementation project(":useLog4jLib")
+    implementation "atsuo.tokuyama.sample:useLog4jLib:1.0.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
