@@ -1,0 +1,21 @@
+def versionName = "1.0.0"
+def repo = new File(rootDir, "repository")
+
+apply plugin: 'maven-publish'
+apply plugin: 'kotlin-android'
+
+publishing {
+    publications {
+        aar(MavenPublication){
+            version = "${versionName}"      // version
+            groupId = 'atsuo.tokuyama.sample'      // グループ名
+            artifactId = 'useLog4jLib' // ライブラリ名
+            artifact("$buildDir/outputs/aar/useLog4jLib-release.aar")
+        }
+    }
+    repositories {
+        maven {
+            url "file://${repo.absolutePath}"
+        }
+    }
+}
